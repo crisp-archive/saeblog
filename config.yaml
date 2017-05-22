@@ -1,0 +1,9 @@
+name: crispgm
+version: 1
+handle:
+- rewrite: if(path ~ "index$") goto "index.php"
+- rewrite: if(path ~ "about$") goto "page.php?doc=about"
+- rewrite: if(path ~ "project$") goto "page.php?doc=project"
+- rewrite: if(path ~ "profile$") goto "page.php?doc=profile"
+- rewrite: if(path ~ "doc/(.*)" ) goto "read.php?doc=$1"
+- directoryindex: index.php 
